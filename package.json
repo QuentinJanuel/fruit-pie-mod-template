@@ -1,6 +1,7 @@
 {
   "name": "my-fruit-pie-mod",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "displayName": "My Mod",
   "description": "A Fruit Pie mod.",
   "private": true,
   "type": "module",
