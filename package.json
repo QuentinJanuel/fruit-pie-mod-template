@@ -10,12 +10,6 @@
     "build": "vite build",
     "typecheck": "tsc --noEmit"
   },
-  "fruitPieMod": {
-    "manifestId": "you.my-mod",
-    "name": "My Mod",
-    "entry": "dist/index.js",
-    "apiVersion": 2
-  },
   "devDependencies": {
     "@types/node": "^24.13.4",
     "concurrently": "^10.0.5",
@@ -23,6 +17,6 @@
     "vite": "^8.3.0"
   },
   "dependencies": {
-    "@fruit-pie/sdk": "^1.1.0"
+    "@fruit-pie/sdk": "^2.0.0"
   }
 }
