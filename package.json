@@ -1,0 +1,28 @@
+{
+  "name": "my-fruit-pie-mod",
+  "version": "0.1.0",
+  "description": "A Fruit Pie mod.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite build --watch\" \"vite preview\"",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "fruitPieMod": {
+    "manifestId": "you.my-mod",
+    "name": "My Mod",
+    "entry": "dist/index.js",
+    "apiVersion": 2
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.4",
+    "concurrently": "^10.0.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@fruit-pie/sdk": "^1.1.0"
+  }
+}
