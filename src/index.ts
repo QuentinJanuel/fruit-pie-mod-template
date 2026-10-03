@@ -1,12 +1,22 @@
 import { createMod } from "@fruit-pie/sdk";
+import { initText } from "@fruit-pie/text";
 
 // Import sprites
 import cherry0 from "./sprites/cherry-0.png?inline";
 import cherry1 from "./sprites/cherry-1.png?inline";
 
+// Import fonts
+import fredoka from "./fonts/fredoka-latin.woff2?inline";
+
 export default createMod((mod) => {
   const cherry = mod.resource.sprite.create("cherry", { origin: { x: 10, y: 12 } });
   void cherry.load([cherry0, cherry1]);
+
+  const { drawText, createText } = initText(mod, {
+    fonts: { fredoka },
+  });
+
+  const hello = createText("こんにちは、世界", { font: "fredoka", size: 22 });
 
   mod.resource.object.create({
     name: "main",
@@ -24,7 +34,9 @@ export default createMod((mod) => {
           ${v.width} = room_width;
           ${v.height} = room_height;
         }
-        draw_text(${v.left} + 8, ${v.top} + 8, "press H");
+
+        draw_set_color(c_blue);
+        ${drawText(`${v.left} + 8`, `${v.top} + 8`, hello)}
 
         if (${cherry.id} >= 0) {
           ${v.frame} = floor(current_time / 200) mod sprite_get_number(${cherry.id});
